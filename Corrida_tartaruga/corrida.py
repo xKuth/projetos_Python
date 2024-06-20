@@ -20,6 +20,17 @@ def numero_da_tartaruga():
             print('Ops! o número não esta entre 1 e 10. tente novamente!')
 
 
+def corrida(cor):
+    tartarugas = criar_tartarugas(cor)
+    while True:
+        for tartaruga in tartarugas:
+            distancia = random.randrange(1, 20)
+            tartaruga.forward(distancia)
+            x, y = tartaruga.pos()
+            if y >= altura // 2 - 10:
+                return cor[tartarugas.index(tartaruga)]
+            
+
 def criar_tartarugas(cor):
     tartarugas = []
     espaçox = Largura // (len(cor) + 1)
@@ -34,6 +45,7 @@ def criar_tartarugas(cor):
         tartarugas.append(tartaruga)
     return tartarugas
 
+
 def inicio_jogo():
     screen = turtle.Screen()
     screen.setup(Largura, altura)
@@ -44,6 +56,8 @@ tartaruga = numero_da_tartaruga()
 inicio_jogo()
 random.shuffle(cores)
 cor = cores[:tartaruga]
-criar_tartarugas(cor)
+ganhador = corrida(cor)
+print('O vencedor das tartarugas é a cor: ', ganhador)
+time.sleep(3)
 
 
