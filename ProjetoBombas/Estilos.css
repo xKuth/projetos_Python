@@ -40,12 +40,13 @@ img{
 
 p{
     text-align: center;
-    font-size: 70%;
+    font-size: 80%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 
 footer{
     padding-top: 3%;
     text-align: center;
-    font-family: "playwrite ES Deco";
+    font-family: "playwrite ES Deco", cursive;
 }
